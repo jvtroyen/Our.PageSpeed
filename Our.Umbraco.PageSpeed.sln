@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.852
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Our.PageSpeed", "Our.PageSpeed.csproj", "{E4B5F79D-90E4-4381-8DFB-D6AA61EB2FBE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Our.Umbraco.PageSpeed", "Our.Umbraco.PageSpeed\Our.Umbraco.PageSpeed.csproj", "{E4B5F79D-90E4-4381-8DFB-D6AA61EB2FBE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

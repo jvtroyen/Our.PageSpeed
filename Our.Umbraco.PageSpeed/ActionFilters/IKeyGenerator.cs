@@ -1,6 +1,6 @@
 ﻿using System.Web.Mvc;
 
-namespace Our.PageSpeed.ActionFilters
+namespace Our.Umbraco.PageSpeed.ActionFilters
 {
     public interface IKeyGenerator
     {

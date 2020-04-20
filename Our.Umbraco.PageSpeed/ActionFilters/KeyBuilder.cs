@@ -2,7 +2,7 @@
 using System.Text;
 using System.Web.Routing;
 
-namespace Our.PageSpeed.ActionFilters
+namespace Our.Umbraco.PageSpeed.ActionFilters
 {
     public class KeyBuilder : IKeyBuilder
     {

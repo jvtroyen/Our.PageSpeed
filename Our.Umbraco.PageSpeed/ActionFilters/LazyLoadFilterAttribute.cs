@@ -7,14 +7,14 @@ using System.Web.Mvc;
 using HtmlAgilityPack;
 using Umbraco.Core;
 
-namespace Our.PageSpeed.ActionFilters
+namespace Our.Umbraco.PageSpeed.ActionFilters
 {
     public class LazyLoadFilterAttribute : ActionFilterAttribute
     {
         //TODO: put these in app.config, with default fallbacks to webp and quality 70
         private const string FilterPrefix = "/media/";
         private const string WebpConversion = "format=webp&quality=70";
-        private static readonly string[] crawlerBots = ConfigurationManager.AppSettings["CrawlerBots"].Split(';');
+        private static string[] crawlerBots = new string[] { "Googlebot", "Screaming Frog" };
         private readonly IKeyGenerator keyGenerator;
 
         public LazyLoadFilterAttribute()
@@ -25,6 +25,11 @@ namespace Our.PageSpeed.ActionFilters
         public LazyLoadFilterAttribute(IKeyBuilder keyBuilder)
             : this(new KeyGenerator(keyBuilder))
         {
+            var crawlerBotsSetting = ConfigurationManager.AppSettings["PageSpeed.CrawlerBots"];
+            if (!string.IsNullOrEmpty(crawlerBotsSetting))
+            {
+                crawlerBots = crawlerBotsSetting.Split(';');
+            }
         }
 
         public LazyLoadFilterAttribute(IKeyGenerator keyGenerator)

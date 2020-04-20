@@ -1,3 +1,7 @@
 .vs/
 Our.PageSpeed/obj/
 Our.PageSpeed/packages/
+nuget pack command.txt
+Our.Umbraco.PageSpeed/bin/
+Our.Umbraco.PageSpeed/obj/
+packages/
