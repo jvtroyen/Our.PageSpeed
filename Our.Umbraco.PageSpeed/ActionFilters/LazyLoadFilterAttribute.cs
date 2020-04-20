@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Web.Mvc;
 using HtmlAgilityPack;
-using Umbraco.Core;
+using Umbraco.Core.Composing;
 
 namespace Our.Umbraco.PageSpeed.ActionFilters
 {
@@ -101,7 +101,7 @@ namespace Our.Umbraco.PageSpeed.ActionFilters
 
         private static string ProcessResponse(string response, string cacheKey)
         {
-            using (ApplicationContext.Current.ProfilingLogger.DebugDuration<LazyLoadFilterAttribute>("Replacing images - " + cacheKey))
+            using (Current.ProfilingLogger.DebugDuration<LazyLoadFilterAttribute>("Replacing images - " + cacheKey))
             {
                 //Find all images and replace them with picture
                 var document = new HtmlDocument();
