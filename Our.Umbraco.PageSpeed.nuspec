@@ -3,15 +3,18 @@
   <metadata>
     <id>Our.Umbraco.PageSpeed</id>
     <title>Umbraco PageSpeed</title>
-    <version>1.0.0.1</version>
+    <version>1.0.1</version>
     <authors>Jeroen Vantroyen</authors>
     <owners>Jeroen Vantroyen</owners>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <license type="expression">MIT</license>
-	<projectUrl>https://github.com/jvtroyen/Our.Umbraco.PageSpeed</projectUrl>
-    <iconUrl>https://nl.gravatar.com/userimage/113367809/d41b86209dbedd91abe3a9fab2dc126b.png</iconUrl>
-    <description>Easy ways to optimize your Google PageSpeed score.</description>
-    <releaseNotes><![CDATA[1.0.0 Initial release]]></releaseNotes>
+    <projectUrl>https://github.com/jvtroyen/Our.Umbraco.PageSpeed</projectUrl>
+    <icon>images\icon.png</icon>
+    <description><![CDATA[Easy ways to optimize your Google PageSpeed score.
+
+- Use version 1.x for Umbraco 7
+- Use version 2.x for Umbraco 8]]></description>
+    <releaseNotes><![CDATA[1.0.1 Ignore Child actions]]></releaseNotes>
     <copyright>Copyright 2020</copyright>
     <language>en-US</language>
     <tags>Umbraco, google, pagespeed</tags>
@@ -20,10 +23,12 @@
         <dependency id="Microsoft.AspNet.Mvc" version="5.2.7" />
         <dependency id="HtmlAgilityPack" version="1.8.8" />
         <dependency id="UmbracoCms.Core" version="7.12.0" />
+        <dependency id="ImageProcessor.Plugins.WebP" version="1.2.0.100" />
       </group>
     </dependencies>
   </metadata>
   <files>
     <file src="our.umbraco.pagespeed\bin\release\Our.Umbraco.PageSpeed.dll" target="lib\net462" />
+    <file src="icon.png" target="images" />
   </files>
 </package>

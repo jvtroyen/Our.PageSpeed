@@ -41,6 +41,12 @@ namespace Our.Umbraco.PageSpeed.ActionFilters
 
         public override void OnActionExecuting(ActionExecutingContext filterContext)
         {
+            //We aren't interested in child-actions, as we are processing ALL images when the complete result is returned 
+            if (filterContext.IsChildAction)
+            {
+                return;
+            }
+
             if (crawlerBots.Any(x => filterContext?.RequestContext?.HttpContext?.Request?.UserAgent?.Contains(x) ?? false))
             {
                 return;
@@ -82,6 +88,11 @@ namespace Our.Umbraco.PageSpeed.ActionFilters
 
         public override void OnResultExecuted(ResultExecutedContext filterContext)
         {
+            if (filterContext.IsChildAction)
+            {
+                return;
+            }
+
             string cacheKey = keyGenerator.GenerateKey(filterContext);
             if (string.IsNullOrEmpty(cacheKey))
             {

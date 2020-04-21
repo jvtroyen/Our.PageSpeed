@@ -5,3 +5,5 @@ nuget pack command.txt
 Our.Umbraco.PageSpeed/bin/
 Our.Umbraco.PageSpeed/obj/
 packages/
+Our.Umbraco.PageSpeed/App_Data/NuGetBackup/
+*.nupkg
